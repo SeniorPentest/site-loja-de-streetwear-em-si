@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Inter:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0;
+    background-color: #050505;
+    color: #e5e7eb;
+    font-family: 'Inter', sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  #root {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    text-align: left;
+    border: none;
+    min-height: 100svh;
+  }
+}
+
+@layer utilities {
+  .text-glow-blue {
+    text-shadow: 0 0 12px rgba(0, 212, 255, 0.8), 0 0 30px rgba(0, 212, 255, 0.4);
+  }
+
+  .text-glow-green {
+    text-shadow: 0 0 12px rgba(57, 255, 20, 0.8), 0 0 30px rgba(57, 255, 20, 0.4);
+  }
+
+  .border-glow {
+    box-shadow: 0 0 0 1px rgba(0, 212, 255, 0.4), 0 0 16px rgba(0, 212, 255, 0.15);
+  }
+
+  .glass-card {
+    background: rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(0, 212, 255, 0.18);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  }
+
+  .btn-neon {
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 0 12px rgba(0, 212, 255, 0.5), 0 0 30px rgba(0, 212, 255, 0.2);
+    transition: box-shadow 0.3s ease, transform 0.2s ease;
+  }
+
+  .btn-neon:hover {
+    box-shadow: 0 0 20px rgba(0, 212, 255, 0.9), 0 0 50px rgba(0, 212, 255, 0.4);
+    transform: translateY(-1px);
+  }
+
+  .btn-neon::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, transparent 60%);
+    pointer-events: none;
+  }
+}
+
